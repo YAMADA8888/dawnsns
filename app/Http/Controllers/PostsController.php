@@ -17,6 +17,7 @@ class PostsController extends Controller
     }
 
     // 新規投稿欄
+    // a
 
      public function create(Request $request)
     {
