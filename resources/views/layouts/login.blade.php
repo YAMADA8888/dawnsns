@@ -22,7 +22,7 @@
 <body>
     <header>
         <div id = "head">
-        <h1><a><img src="images/logo.png"></a></h1>
+        <h1><a href="/top"><img src="images/main_logo.png"></a></h1>
             <div id="">
                 <div id="">
                     <p>〇〇さん<img src="images/arrow.png"></p>
@@ -53,12 +53,12 @@
                 </div>
                 <p class="btn"><a href="">フォロワーリスト</a></p>
             </div>
-            <p class="btn"><a href="">ユーザー検索</a></p>
+            <p class="btn"><a href="/search">ユーザー検索</a></p>
         </div>
     </div>
     <footer>
     </footer>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js""></script>
-    <script src="JavaScriptファイルのURL"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js""></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>

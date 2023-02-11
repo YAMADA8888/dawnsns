@@ -35,11 +35,16 @@ Route::get('/top','PostsController@index');
 Route::get('/profile','UsersController@profile');
 
 Route::get('/search','UsersController@index');
+Route::post('/search','UsersController@index');
 
 Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
 
 
 Route::post('post/create','PostsController@create');
+Route::post('post/update','PostsController@update');
+
+Route::get('/{id}/delete', 'PostsController@delete');
 
 // ログアウト
+Route::get('/logout', 'Auth\LoginController@logout');

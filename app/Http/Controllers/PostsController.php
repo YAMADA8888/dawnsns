@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+
 
 class PostsController extends Controller
 {
@@ -22,11 +24,35 @@ class PostsController extends Controller
      public function create(Request $request)
     {
         $posts = $request->input('newPost');
+        $id = Auth::id();
+
         DB::table('posts')->insert([
+            'posts' => $posts,
+            'user_id' => $id
+        ]);
+
+        return redirect('/top');
+    }
+
+     public function update(Request $request)
+    {
+        $posts = $request->input('upPost');
+        $id = $request->input('id');
+
+        DB::table('posts')
+        ->where('id', $id)
+        ->update([
             'posts' => $posts
         ]);
 
-        return redirect('/index');
+        return redirect('/top');
     }
 
+
+    public function delete($id){
+     \DB::table('posts')
+       ->where('id', $id)
+       ->delete();
+     return redirect('/top');
+}
 }
